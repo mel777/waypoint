@@ -8,10 +8,10 @@ func (locs Locations) MakeUserFilters() []FlybyFilter {
 		Fatal("Could not find location using %q", label)
 	}
 	amax := 4000.0 // km
-	bmax := 4000.0 // km
-	cmax := 4000.0 // km
-	dmax := 0.75 // km
-	heading := []float64{-45.0-22.5, 22.5} // deg from north
+	bmax := 2000.0 // km
+	cmax := 2000.0 // km
+	dmax := 0.5 //0.75 // km
+	heading := []float64{-45.0,0}//-45.0-22.5, 22.5} // deg from north
 
 	nproc := 4
 	filters := []FlybyFilter{}

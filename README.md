@@ -112,6 +112,6 @@ I didn't go too nuts with optimisation, but did try to streamline things where i
 Conclusion
 ----------
 
-For the outcome, see the blog :)  But this was a worthwhile exercise to demonstrate that if MH370 really did fly over that little island, we know with reasonable probability where it was flying.  The most important thing is evidence of the sight and senses.  Use analysis to extract as much as you can, but never stray too far from the _evidence_.
+For the outcome, see [the blog](http://mh370yat.blogspot.com/2014/04/flight-path-over-maldives.html) :)  But this was a worthwhile exercise to demonstrate that if MH370 really did fly over that little island, we know with reasonable probability where it was flying.  The most important thing is evidence of the sight and senses.  Use analysis to extract as much as you can, but never stray too far from the _evidence_.
 
 I hope this might also serve as a nice, compact, and relevant little Go programming case study showing command line invocation, web scraping and parsing, text file manipulation, some mathemtics, and parallel computation with an interface and closure.
