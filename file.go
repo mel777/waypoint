@@ -121,8 +121,8 @@ func WriteFlybysToFile(datapath string, flybys []Flyby) {
 		ifError(err)
 		var line string
 		for i, fb := range flybys {
-			line = fmt.Sprintf("%6d (%s) (%s) %.1f %.3f %.1f %.1f %.1f\n",
-				i, fb.Loc1, fb.Loc2,
+			line = fmt.Sprintf("%d,%s,%s,%.1f,%.3f,%.1f,%.1f,%.1f\n",
+				i, fb.Loc1.ToSimpleCSV(), fb.Loc2.ToSimpleCSV(),
 				RadToDist(fb.Ang12), RadToDist(fb.Nearest),
 				RadToDeg(fb.B), RadToDeg(fb.C), RadToDeg(fb.Heading))
 			out.WriteString(line)

@@ -33,15 +33,21 @@ func NewLocation() *Location {
 }
 
 func (loc Location) String() string {
-	id := ""
+	return fmt.Sprintf("%s %s %f %f", loc.Type, loc.Id(), loc.Lat, loc.Long)
+}
+
+func (loc Location) ToSimpleCSV() string {
+	return fmt.Sprintf("%s,%s,%f,%f", loc.Type, loc.Id(), loc.Lat, loc.Long)
+}
+
+func (loc Location) Id() string {
 	if len(loc.IATAcode) > 0 {
-		id = "IATA:" + loc.IATAcode
+		return "IATA:" + loc.IATAcode
 	} else if len(loc.ICAOcode) > 0 {
-		id = "ICAO:" + loc.ICAOcode
+		return "ICAO:" + loc.ICAOcode
 	} else {
-		id = "Name:" + loc.Name
+		return "Name:" + loc.Name
 	}
-	return fmt.Sprintf("%s %s %f %f", loc.Type, id, loc.Lat, loc.Long)
 }
 
 func (loc Location) ToCSVLine() string {
