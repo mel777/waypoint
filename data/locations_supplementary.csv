@@ -1,0 +1,8 @@
+#Type,Country,ICAOcode,IATAcode,Name,Desc,latdeg,latmin,latsec,latdir,longdeg,longmin,longsec,longdir
+Airport,Maldives,VRMV,VAM,Villa International Airport,Maamingili,3,28,14,N,72,50,9,E
+Airport,Maldives,VRMD,DRV,Dharavandhoo Airport,Dharavandhoo,5,9,21,N,73,7,58,E
+Airport,Maldives,VRMR,FVM,Fuvahmulah Airport, Fuvahmulah,0,18,33,S,73,26,2,E
+Airport,Maldives,VRMO,GKK,Kooddoo Airport, Kooddoo,0,44,3,N,73,25,58,E
+Airport,Maldives,VRNT,TMF,Thimarafushi Airport, Thimarafushi,2,12,37,N,73,9,5,E
+# Add these to facilitate command line queries
+Other,Maldives,KUDAHUVADHOO,KUDAHUVADHOO,Kudahuvadhoo,Dhaal Atol,2,40,0,N,72,54,0,E
