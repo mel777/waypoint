@@ -15,6 +15,7 @@ var cmdRaw bool
 var cmdNear string
 var cmdDelta float64
 var cmdMake bool
+var cmdPath string
 
 const (
 	DATA_DIR string = "data"
@@ -22,6 +23,7 @@ const (
 	ADDITIONAL_LOCATIONS_NAME string = "locations_supplementary.csv"
 	RESULT_NAME string = "result.csv"
 	LOCATION_CSV_NAME string = "locations_native.csv"
+	TRACK_CSV_NAME string = "locations_track.csv"
 	BASE_ADDRESS string = "http://www.fallingrain.com/world/"
 	US_STATES string = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MT NE NV NH NJ NM NY NC ND OH OK OR MD MA MI MN MS MO PA RI SC SD TN TX UT VT VA WA WV WI WY"
 	AIRPORT_TAG string = "airports"
@@ -44,6 +46,7 @@ func init() {
 	flag.StringVar(&cmdNear, "n", "", "find location with given label within square of half-length given by -d in m")
 	flag.Float64Var(&cmdDelta, "d", 0.0, "offset value used by other commands")
 	flag.BoolVar(&cmdMake, "m", false, "make native location data file in csv format")
+	flag.StringVar(&cmdPath, "p", "", "provide info on path specified by comma separated list of locations")
 	// Fill out location types
 	for _, typ := range LOCTYPE {
 		typ.SourceSuffix = "/" + strings.ToLower(typ.Plural) + ".html"

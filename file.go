@@ -25,6 +25,10 @@ func GetLocationCSVPath(datapath string) string {
 	return filepath.Join(datapath, LOCATION_CSV_NAME)
 }
 
+func GetTrackCSVPath(datapath string) string {
+	return filepath.Join(datapath, TRACK_CSV_NAME)
+}
+
 func LoadLocationData(datapath string) Locations {
 	locs := Locations([]Location{})
 	// Parse waypoint html files
@@ -160,3 +164,19 @@ func ReadNativeLocationsFile(nativepath string) Locations {
 	}
     return result
 }
+
+func (locs Locations) WriteToSimpleCSV(datapath string) {
+	path := GetTrackCSVPath(datapath)
+	err := os.RemoveAll(path)
+	ifError(err)
+	Println("Writing location data to %s", path)
+	out, err := os.Create(path)
+	defer out.Close()
+	ifError(err)
+	out.WriteString("type,latitude,longitude,alt\n")
+	for _, loc := range locs {
+		out.WriteString(loc.ToTrackCSV()+"\n")
+	}
+    return
+}
+

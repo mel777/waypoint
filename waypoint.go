@@ -53,10 +53,16 @@ func main() {
 	}
 	if cmdMake {
 		locs.WriteToNativeCSV(datapath)
+		os.Exit(0)
 	}
 
 	if len(cmdTest) > 0 {
 		Test(cmdTest)
+	}
+
+	if len(cmdPath) > 0 {
+		locs.Path(cmdPath, datapath)
+		os.Exit(0)
 	}
 
 	// Make filters before we cull locations that aren't waypoints or airports

@@ -40,6 +40,11 @@ func (loc Location) ToSimpleCSV() string {
 	return fmt.Sprintf("%s,%s,%f,%f", loc.Type, loc.Id(), loc.Lat, loc.Long)
 }
 
+// For GPS Visualizer
+func (loc Location) ToTrackCSV() string {
+	return fmt.Sprintf("T,%f,%f,0", loc.Lat, loc.Long)
+}
+
 func (loc Location) Id() string {
 	if len(loc.IATAcode) > 0 {
 		return "IATA:" + loc.IATAcode
@@ -196,9 +201,10 @@ func (locs Locations) PrintNearbyLocations(label string, d float64) {
 			}
 		}
 	}
-	Println(
-		"Found %d locations, which have %d unique pairs",
-		c, maxPairs(0, c-1))
+	Println("Found %d locations", c)
+	if c > 1 {
+		Println("%d unique pairs", maxPairs(0, c-1))
+	}
     os.Exit(0)
 }
 
@@ -237,4 +243,20 @@ func (locs Locations) FindBy(label string) (Location, bool, int) {
 		}
 	}
 	return Location{}, false, 0
+}
+
+// Turn a comma separated list of locations into a slice of locations.
+func (locs Locations) LabelsToLocations(labstr string) Locations {
+	labels := strings.Split(labstr, ",")
+	locs2 := Locations([]Location{})
+	loc := Location{}
+	exist := false
+	for _, label := range labels {
+		loc, exist, _ = locs.FindBy(label)
+		if !exist {
+			Fatal("Could not find location with label %q", label)
+		}
+		locs2 = append(locs2, loc)
+	}
+	return locs2
 }

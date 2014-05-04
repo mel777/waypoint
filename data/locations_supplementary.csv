@@ -5,4 +5,7 @@ Airport,Maldives,VRMR,FVM,Fuvahmulah Airport, Fuvahmulah,0,18,33,S,73,26,2,E
 Airport,Maldives,VRMO,GKK,Kooddoo Airport, Kooddoo,0,44,3,N,73,25,58,E
 Airport,Maldives,VRNT,TMF,Thimarafushi Airport, Thimarafushi,2,12,37,N,73,9,5,E
 # Add these to facilitate command line queries
-Other,Maldives,KUDAHUVADHOO,KUDAHUVADHOO,Kudahuvadhoo,Dhaal Atol,2,40,0,N,72,54,0,E
+Other,Maldives,KHV,KHV,Kudahuvadhoo,Dhaal Atol,2,40,0,N,72,54,0,E
+Other,Malaysia,TURN2,TURN2,Turn2,Malacca Straits,5,10,42.5,N,100,11,17.6,E
+Other,Malaysia,FINAL,FINAL,Final,Malacca Straits,6,28,44.641,N,96,14,23.197,E
+Airport,United Kingdom,FJDG,NKW,Diego Garcia,British Indian Ocean Territory,7,18,47.76,S,72,24,39.92,E
